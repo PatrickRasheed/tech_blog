@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PageController!{% endblock %}
+
+{% block body %}
+<H1>TECH BLOG</H1>
+<P> Latest articles about IT and development </P>
+{% for post in posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <a href="{{ path('app_post_show', {'id': post.id}) }}">Lire la suite</a>
+    </article>
+{% endfor %}
+{% endblock %}
